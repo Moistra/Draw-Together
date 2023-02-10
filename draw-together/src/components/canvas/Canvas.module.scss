@@ -1,0 +1,15 @@
+@import './../variables.module';
+
+
+.canvasWrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  background-color: #632828;
+  width: $canvas-width;
+  height: $canvas-height;
+  border: 1px solid black;
+}

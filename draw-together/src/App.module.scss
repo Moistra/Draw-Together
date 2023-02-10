@@ -1,0 +1,9 @@
+@import "./components/variables.module";
+
+.App {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  background-color: $background-color;
+}
+
