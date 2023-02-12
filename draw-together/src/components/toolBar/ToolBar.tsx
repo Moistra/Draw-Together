@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './ToolBar.module.scss'
-import {ToolBarButton} from "./ToolBarButton";
+import {ToolBarButton} from "./../index";
 
 
 export const ToolBar = () => {

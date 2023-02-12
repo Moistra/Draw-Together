@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./ToolBar.module.scss";
+import style from "./ToolBarButton.module.scss";
 
 interface IToolBarButton {
     type: 'brush' | 'circle' | 'eraser'

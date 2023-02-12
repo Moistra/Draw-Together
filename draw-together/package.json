@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -45,6 +44,7 @@
   "devDependencies": {
     "@types/node-sass": "^4.11.3",
     "node-sass": "^8.0.0",
-    "typescript-plugin-css-modules": "^4.1.1"
+    "typescript-plugin-css-modules": "^4.1.1",
+    "@reduxjs/toolkit": "^1.9.2"
   }
 }
