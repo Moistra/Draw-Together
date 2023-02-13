@@ -1,5 +1,4 @@
 import {Tool} from './index'
-import {MouseEventHandler} from "react";
 
 
 export class Brush extends Tool {

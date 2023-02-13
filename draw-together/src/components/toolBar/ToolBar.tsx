@@ -1,9 +1,16 @@
 import React from 'react';
 import style from './ToolBar.module.scss'
 import {ToolBarButton} from "./../index";
+import {ITool} from "../../models/toolsInterfaces";
 
 
-export const ToolBar = () => {
+interface IToolBarProps {
+    setTool: (tool: ITool) => void,
+    canvas: HTMLCanvasElement | null
+}
+
+
+export const ToolBar = ({canvas, setTool}:IToolBarProps) => {
     return (
         <div className={style.toolbar}>
             <div className={style.toolbarInstruments}>
