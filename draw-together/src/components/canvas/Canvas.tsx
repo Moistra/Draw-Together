@@ -1,12 +1,11 @@
 import React, {useEffect, useRef} from 'react';
 import style from './Canvas.module.scss'
-import {setCanvas, setTool} from '../../store/index'
 import {useAppDispatch} from "../../store/index";
-import {Brush, Rectangle} from "../../drawingTools";
-import {ITool} from "../../models/toolsInterfaces";
+import {Tool, Brush} from "../../drawingTools";
+import {setCanvas, setTool} from '../../store/index'
 
 interface ICanvasProp {
-    setTool: (tool: ITool)=>void,
+    setTool: (tool: Tool)=>void,
     setCanvas: (canvas: HTMLCanvasElement) => void
 }
 
@@ -16,15 +15,13 @@ export const Canvas = ({setCanvas, setTool}: ICanvasProp) => {
 
     const dispatch = useAppDispatch()
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
-
+    //console.log(`canvas rerender ${canvasRef.current}`)
     useEffect (()=>{
         // dispatch(setCanvas(canvasRef.current!))
-
         if (canvasRef.current){
             setCanvas(canvasRef.current)
             setTool (new Brush(canvasRef.current))
         // dispatch(setTool(new Brush(canvasRef.current)))
-        new Rectangle(canvasRef.current)
         }
     }, [])
 

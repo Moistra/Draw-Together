@@ -1,7 +1,7 @@
 import {Tool} from './index'
 
 
-export class Rectangle extends Tool {
+export class Circle extends Tool {
 
     mouseDown: boolean
     startX: number | null
@@ -31,15 +31,15 @@ export class Rectangle extends Tool {
 
     mouseDownHandler(e: MouseEvent) {
         this.mouseDown = true
-        this.startX = (e.clientX - this.canvas.offsetLeft)
-        this.startY = (e.clientY - this.canvas.offsetTop)
+        this.startX = (e.x - this.canvas.offsetLeft)
+        this.startY = (e.y - this.canvas.offsetTop)
         this.savedCanvasData = this.canvas.toDataURL()
     }
 
     mouseMoveHandler(e: MouseEvent) {
         if (this.mouseDown && (this.startX && this.startY)) {
-            let width = e.x - this.canvas.offsetLeft - this.startX
-            let height = e.y - this.canvas.offsetTop - this.startY
+            let width = Math.abs(e.x - this.canvas.offsetLeft - this.startX)
+            let height = Math.abs(e.y - this.canvas.offsetTop - this.startY)
             this.draw(this.startX, this.startY, width, height)
         }
     }
@@ -47,13 +47,13 @@ export class Rectangle extends Tool {
     draw(x: number, y: number, w: number, h: number) {
         const img = new Image()
         if (this.savedCanvasData)
-        img.src = this.savedCanvasData
+            img.src = this.savedCanvasData
         img.onload = () => {
             this.context.clearRect(0,0, this.canvas.width, this.canvas.height)
             this.context.drawImage(img,0,0, this.canvas.width, this.canvas.height)
             this.context.beginPath()
-            this.context.rect(this.startX!, this.startY!, w, h)
-            this.context.fill()
+            this.context.arc(x, y , w, 0, 2 * Math.PI)
+            //this.context.fill()
             this.context.stroke()
         }
     }

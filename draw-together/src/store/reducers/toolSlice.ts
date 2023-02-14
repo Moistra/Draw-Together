@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {ITool} from '../../models/toolsInterfaces'
+import {Tool} from "../../drawingTools";
 
 
 interface IToolState {
-    currTool: ITool | null
+    currTool: Tool | null
 }
 
 const initialState : IToolState = {
@@ -14,7 +14,7 @@ const toolSlice = createSlice({
     name: 'currTool',
     initialState,
     reducers: {
-        setTool: (state, action: PayloadAction<ITool>) => {
+        setTool: (state, action: PayloadAction<Tool>) => {
             state.currTool = action.payload as any
         }
     }

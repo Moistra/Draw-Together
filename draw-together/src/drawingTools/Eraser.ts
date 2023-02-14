@@ -1,13 +1,14 @@
 import {Tool} from './index'
 
 
-export class Brush extends Tool {
+export class Eraser extends Tool {
 
     mouseDown: boolean
 
     constructor(canvas: HTMLCanvasElement) {
         super(canvas);
         this.mouseDown = false
+        this.context.globalCompositeOperation = 'destination-out'
         this.initListeners()
     }
 
@@ -27,8 +28,7 @@ export class Brush extends Tool {
     }
     mouseMoveHandler(e: MouseEvent){
         if (this.mouseDown){
-            // console.log(`x:${e.x- this.canvas.offsetLeft} y:${e.y  - this.canvas.offsetTop}`)
-            // console.log(`offset x:${this.canvas.offsetLeft} offset y:${this.canvas.offsetTop}`)
+
             this.draw(e.x - this.canvas.offsetLeft, e.y  - this.canvas.offsetTop)
         }
     }
