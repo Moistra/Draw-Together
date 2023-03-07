@@ -27,6 +27,9 @@ export class Rectangle extends Tool {
         this.mouseDown = false
         this.startX = null
         this.startY = null
+        this.context.setLineDash([10, 0]);
+        this.context.stroke()
+        this.context.fill()
     }
 
     mouseDownHandler(e: MouseEvent) {
@@ -53,7 +56,7 @@ export class Rectangle extends Tool {
             this.context.drawImage(img,0,0, this.canvas.width, this.canvas.height)
             this.context.beginPath()
             this.context.rect(this.startX!, this.startY!, w, h)
-            this.context.fill()
+            this.context.setLineDash([10, 20]);
             this.context.stroke()
         }
     }

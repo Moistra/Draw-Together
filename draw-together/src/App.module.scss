@@ -1,9 +1,19 @@
 @import "./components/variables.module";
 
 .App {
+  box-sizing: border-box;
   height: 100vh;
   max-height: 100vh;
   width: 100vw;
-  background-color: $background-color;
+  background: $backgroundApp;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  //App text
+  font-family:  $fontFamily;
+  font-weight: bold;
+  color: $textColor;
 }
 

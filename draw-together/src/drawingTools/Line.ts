@@ -35,6 +35,7 @@ export class Line extends Tool {
                 this.context.moveTo(this.startX!, this.startY!)
                 this.context.lineTo(e.x - this.canvas.offsetLeft, e.y - this.canvas.offsetTop)
                 this.context.stroke()
+
             }
 
         }
@@ -44,7 +45,6 @@ export class Line extends Tool {
         this.mouseDown = true
         this.startX = e.x - this.canvas.offsetLeft
         this.startY = e.y - this.canvas.offsetTop
-
         this.savedCanvasData = this.canvas.toDataURL()
     }
 
@@ -65,6 +65,7 @@ export class Line extends Tool {
             this.context.beginPath()
             this.context.moveTo(this.startX!, this.startY!)
             this.context.lineTo(x, y)
+            this.context.setLineDash([10, 20]);
             this.context.stroke()
         }
     }
