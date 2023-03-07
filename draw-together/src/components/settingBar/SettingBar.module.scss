@@ -1,12 +1,25 @@
 @import './../variables.module';
 
 .settingBar {
-  height: $settingBar-height;
-  background-color: $bars-color;
+  //height: $settingBar-height;
+  height: fit-content;
+  background: $bars-color;
   display: flex;
   align-items: center;
-  position: absolute;
+  //position: absolute;
+  z-index: 1;
   width: 100%;
-  box-shadow: 0 4px 5px gray;
+  box-shadow: $boxShadow;
   top: $toolbar-height;
+}
+
+.settingItem {
+  margin: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.settingItem span {
+  font-size: medium;
+  padding: 5px;
 }

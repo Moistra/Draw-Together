@@ -11,15 +11,15 @@ export class Tool {
         this.destroyListeners()
     }
 
-    set fillStyle (color: string){
+    set fillColor (color: string){
         this.context.fillStyle = color
     }
 
-    set setStrokeColor (color: string) {
+    set strokeColor (color: string) {
         this.context.strokeStyle = color
     }
 
-    set setLineWidth (width: number) {
+    set lineWidth (width: number) {
         this.context.lineWidth = width
     }
 

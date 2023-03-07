@@ -1,11 +1,14 @@
-$background-color: #c9c9c9;
-
+//App params
+$backgroundApp: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+$textColor: rgb(127, 80, 80);
+$fontFamily: Kanit, sans-serif;
 
 
 //Bars param
-$bars-color: #FFFFFF;
+$bars-color: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 $toolbar-height: 40px;
 $settingBar-height: 40px;
+$boxShadow: 0 4px 5px rgba(255, 11, 3, 0.27);
 
 
 //Canvas param

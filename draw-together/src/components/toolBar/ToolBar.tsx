@@ -21,15 +21,15 @@ export const ToolBar = ({canvas, setTool, currTool}: IToolBarProps) => {
     //console.log(`${canvas} toolBar rerender`)
     return (
         <div className={style.toolbar}>
-            <div className={style.toolbarInstruments}>
-                <ToolBarButton type={"brush"} handler={() => setTool(new Brush(canvas!))}/>
-                <ToolBarButton type={"rect"} handler={() => setTool(new Rectangle(canvas!))}/>
-                <ToolBarButton type={"circle"} handler={() => setTool(new Circle(canvas!))}/>
-                <ToolBarButton type={"eraser"} handler={() => setTool(new Eraser(canvas!))}/>
-                <ToolBarButton type={"line"} handler={() => setTool(new Line(canvas!))}/>
+            {canvas && <div className={style.toolbarInstruments}>
+                <ToolBarButton type={"brush"} handler={() => setTool(new Brush(canvas))}/>
+                <ToolBarButton type={"rect"} handler={() => setTool(new Rectangle(canvas))}/>
+                <ToolBarButton type={"circle"} handler={() => setTool(new Circle(canvas))}/>
+                <ToolBarButton type={"eraser"} handler={() => setTool(new Eraser(canvas))}/>
+                <ToolBarButton type={"line"} handler={() => setTool(new Line(canvas))}/>
                 {/*<input type={'color'} className={style.palette} />*/}
-                {currTool && <ColorPicker currTool={currTool}/>}
-            </div>
+                {/*{currTool && <ColorPicker currTool={currTool}/>}*/}
+            </div>}
             <div className={style.toolbarFunc}>
                 <ToolBarButton type={'undo'}/>
                 <ToolBarButton type={'redo'}/>

@@ -27,6 +27,9 @@ export class Circle extends Tool {
         this.mouseDown = false
         this.startX = null
         this.startY = null
+        this.context.setLineDash([10, 0]);
+        this.context.fill()
+        this.context.stroke()
     }
 
     mouseDownHandler(e: MouseEvent) {
@@ -53,7 +56,7 @@ export class Circle extends Tool {
             this.context.drawImage(img,0,0, this.canvas.width, this.canvas.height)
             this.context.beginPath()
             this.context.arc(x, y , w, 0, 2 * Math.PI)
-            //this.context.fill()
+            this.context.setLineDash([10, 20]);
             this.context.stroke()
         }
     }

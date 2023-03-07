@@ -2,12 +2,12 @@
 
 
 .canvasWrapper{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 10px;
+  flex: 1;
+  display: inline-block;
+  text-align: center;
 }
-canvas {
+.canvasWrapper canvas {
   background-color: #FFFFFF;
   border: 1px solid black;
 }

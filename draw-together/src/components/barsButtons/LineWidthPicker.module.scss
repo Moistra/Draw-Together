@@ -1,0 +1,8 @@
+.lineWidthPicker {
+  display: flex;
+  flex-direction: row;
+}
+
+.lineWidthPicker input[type = range]:hover {
+  cursor: pointer;
+}

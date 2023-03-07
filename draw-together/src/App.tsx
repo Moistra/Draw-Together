@@ -14,8 +14,8 @@ function App() {
     //console.log(`app rerender ${currCanvas}`)
     return (
         <div className={style.App}>
-            <SettingBar/>
             <ToolBar setTool = {setCurrTool} canvas = {currCanvas} currTool={currTool}/>
+            <SettingBar  currTool={currTool}/>
             <Canvas setTool = {setCurrTool} setCanvas = {setCanvas}/>
         </div>
     );
