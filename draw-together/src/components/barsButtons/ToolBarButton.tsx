@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "./ToolBarButton.module.scss";
 
+
 interface IToolBarButton {
     type: 'brush' | 'circle' |
         'eraser' | 'rect' |
@@ -12,7 +13,8 @@ interface IToolBarButton {
 export const ToolBarButton = ({type, handler}: IToolBarButton) => {
     return (
         <div>
-            <button className={[style.toolbarBtn, style[type]].join(' ')} onClick={handler}/>
+            <button className={[style.toolbarBtn, style[type]].join(' ')} onClick={handler}>
+            </button>
         </div>
     );
 };

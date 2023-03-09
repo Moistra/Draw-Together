@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './ToolBar.module.scss'
-import {ToolBarButton, ColorPicker} from "./../index";
+import {ToolBarButton} from "./../index";
 import {
     Tool,
     Brush,
@@ -9,6 +9,7 @@ import {
     Eraser,
     Line
 } from "../../drawingTools";
+import {undo, redo, useAppDispatch} from './../../store/index'
 
 
 interface IToolBarProps {
@@ -19,6 +20,9 @@ interface IToolBarProps {
 
 export const ToolBar = ({canvas, setTool, currTool}: IToolBarProps) => {
     //console.log(`${canvas} toolBar rerender`)
+
+    const dispatch = useAppDispatch()
+
     return (
         <div className={style.toolbar}>
             {canvas && <div className={style.toolbarInstruments}>
@@ -27,14 +31,14 @@ export const ToolBar = ({canvas, setTool, currTool}: IToolBarProps) => {
                 <ToolBarButton type={"circle"} handler={() => setTool(new Circle(canvas))}/>
                 <ToolBarButton type={"eraser"} handler={() => setTool(new Eraser(canvas))}/>
                 <ToolBarButton type={"line"} handler={() => setTool(new Line(canvas))}/>
-                {/*<input type={'color'} className={style.palette} />*/}
-                {/*{currTool && <ColorPicker currTool={currTool}/>}*/}
-            </div>}
-            <div className={style.toolbarFunc}>
-                <ToolBarButton type={'undo'}/>
-                <ToolBarButton type={'redo'}/>
+            </div>
+            }
+            {canvas && <div className={style.toolbarFunc}>
+                <ToolBarButton type={'undo'} handler={() => dispatch(undo(canvas))}/>
+                <ToolBarButton type={'redo'} handler={() => dispatch(redo(canvas))}/>
                 <ToolBarButton type={'save'}/>
             </div>
+            }
         </div>
     );
 };
