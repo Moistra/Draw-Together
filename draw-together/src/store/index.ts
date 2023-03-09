@@ -1,11 +1,11 @@
-import {setCanvas} from './reducers/canvasSlice'
-import {setTool} from './reducers/toolSlice'
-import {useAppDispatch, useAppSelector} from './hooks/redux'
-
+export {
+    setStoreCanvas,
+    pushToUndoList,
+    redo,
+    undo
+} from './reducers/canvasSlice'
 
 export {
-    setCanvas,
-    setTool,
     useAppDispatch,
     useAppSelector
-}
+} from './hooks/redux'
